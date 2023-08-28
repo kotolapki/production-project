@@ -3,7 +3,7 @@ import {
   LOCAL_STORAGE_THEME_KEY,
   ThemeContext,
   ThemeEnum,
-} from "./ThemeContext";
+} from "../lib/ThemeContext";
 
 interface Props {
   children: ReactNode;
