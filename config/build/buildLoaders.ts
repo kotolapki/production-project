@@ -9,7 +9,7 @@ export const getBuildLoaders = ({ isDev }: BuildOptions): RuleSetRule[] => {
   };
 
   const fileLoader = {
-    test: /\.(png|jpe?g|gif|woff2|woff)$/i,
+    test: /\.(png|jpe?g|gif)$/i,
     use: [
       {
         loader: "file-loader",

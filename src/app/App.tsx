@@ -3,6 +3,7 @@ import { useTheme } from "app/providers/ThemeProvider";
 import { classNames } from "shared/lib/classNames/classNames";
 import { AppRouter } from "./providers/router";
 import { Navbar } from "widgets/Navbar";
+import { Sidebar } from "widgets/Sidebar";
 
 const App = () => {
   const { theme } = useTheme();
@@ -12,8 +13,10 @@ const App = () => {
       className={classNames("app", { hovered: true, selected: false }, [theme])}
     >
       <Navbar />
-
-      <AppRouter />
+      <div className="page-content ">
+        <Sidebar />
+        <AppRouter />
+      </div>
     </div>
   );
 };

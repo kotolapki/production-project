@@ -1,0 +1,21 @@
+.root {
+  padding: 16px;
+  height: calc(100vh - var(--navbar-height));
+  min-width: var(--sidebar-width);
+  background: var(--inverted-bg-color);
+  transition: min-width 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.collapsed {
+  min-width: var(--sidebar-width-collapsed);
+}
+
+.switchers {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
