@@ -5,10 +5,10 @@
   background: var(--inverted-bg-color);
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .links {
-  margin-left: auto;
   display: flex;
   align-items: center;
   gap: 20px;
