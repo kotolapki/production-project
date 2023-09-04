@@ -12,6 +12,7 @@ module.exports = {
     'standard-with-typescript',
     'plugin:react/recommended',
     'plugin:react/jsx-runtime',
+    'plugin:i18next/recommended',
   ],
   overrides: [
     {
@@ -29,7 +30,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react'],
+  plugins: ['react', 'i18next'],
   rules: {
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/strict-boolean-expressions': 'off',
