@@ -1,9 +1,9 @@
-import { ReactNode, useMemo, useState } from "react";
+import { ReactNode, useMemo, useState } from 'react';
 import {
   LOCAL_STORAGE_THEME_KEY,
   ThemeContext,
   ThemeEnum,
-} from "../lib/ThemeContext";
+} from '../lib/ThemeContext';
 
 interface Props {
   children: ReactNode;
@@ -21,7 +21,7 @@ const ThemeProvider = ({ children }: Props) => {
       theme,
       setTheme,
     }),
-    [theme]
+    [theme],
   );
 
   return (

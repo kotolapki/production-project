@@ -1,9 +1,9 @@
-import { useContext } from "react";
+import { useContext } from 'react';
 import {
   LOCAL_STORAGE_THEME_KEY,
   ThemeContext,
   ThemeEnum,
-} from "./ThemeContext";
+} from './ThemeContext';
 
 export const useTheme = () => {
   const { theme, setTheme } = useContext(ThemeContext);
@@ -13,7 +13,10 @@ export const useTheme = () => {
       theme === ThemeEnum.LIGHT ? ThemeEnum.DARK : ThemeEnum.LIGHT;
 
     localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme);
-    setTheme(newTheme);
+
+    if (setTheme) {
+      setTheme(newTheme);
+    }
   };
 
   return {
