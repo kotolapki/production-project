@@ -4,5 +4,6 @@
   "links": {
     "main": "Main",
     "about": "About"
-  }
+  },
+  "pageNotFound": "Page not found"
 }
