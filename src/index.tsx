@@ -3,6 +3,8 @@ import { BrowserRouter } from 'react-router-dom';
 import { createRoot } from 'react-dom/client';
 import { ThemeProvider } from 'app/providers/ThemeProvider';
 import 'shared/config/i18n/i18n';
+import { ErrorBoundary } from 'app/providers/ErrorBoundary';
+import { AppError } from 'widgets/AppError';
 
 const container = document.getElementById('root');
 
@@ -11,9 +13,11 @@ if (container) {
 
   root.render(
     <BrowserRouter>
-      <ThemeProvider>
-        <App />
-      </ThemeProvider>
+      <ErrorBoundary fallback={<AppError />}>
+        <ThemeProvider>
+          <App />
+        </ThemeProvider>
+      </ErrorBoundary>
     </BrowserRouter>,
   );
 }

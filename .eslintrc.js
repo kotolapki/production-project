@@ -41,5 +41,8 @@ module.exports = {
     '@typescript-eslint/member-delimiter-style': 'off',
     '@typescript-eslint/quotes': 'off',
     '@typescript-eslint/no-floating-promises': 'off',
+    '@typescript-eslint/space-before-function-paren': 'off',
+    '@typescript-eslint/indent': 'off',
+    '@typescript-eslint/no-confusing-void-expression': 'off',
   },
 };
