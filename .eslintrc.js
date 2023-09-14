@@ -25,6 +25,10 @@ module.exports = {
         project: ['./tsconfig.json'],
       },
     },
+    {
+      files: ['**/src/**/*.test.{ts,tsx}'],
+      rules: { 'i18next/no-literal-string': 'off' },
+    },
   ],
   parserOptions: {
     ecmaVersion: 'latest',
