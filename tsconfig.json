@@ -27,6 +27,7 @@
     "src",
     "config",
     "jest.config.ts",
+    "jest-setup.ts",
     "webpack.config.ts"
   ]
 }
