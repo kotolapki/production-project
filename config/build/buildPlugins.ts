@@ -14,7 +14,7 @@ export const getBuildPlugins = ({
   paths,
   isDev,
 }: BuildOptions): WebpackPluginInstance[] => {
-  return [
+  const plugins = [
     new ProgressPlugin(),
     new HtmlWebpackPlugin({
       template: paths.html,
@@ -24,8 +24,13 @@ export const getBuildPlugins = ({
       chunkFilename: 'css/[name].[contenthash:8].css',
     }),
     new DefinePlugin({ _IS_DEV_: JSON.stringify(isDev) }),
-    new HotModuleReplacementPlugin(),
-    new ReactRefreshWebpackPlugin(),
-    new BundleAnalyzerPlugin({ openAnalyzer: false }),
   ];
+
+  if (isDev) {
+    plugins.push(new HotModuleReplacementPlugin());
+    plugins.push(new ReactRefreshWebpackPlugin());
+    plugins.push(new BundleAnalyzerPlugin({ openAnalyzer: false }));
+  }
+
+  return plugins;
 };
