@@ -13,6 +13,7 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:react/jsx-runtime',
     'plugin:i18next/recommended',
+    'plugin:storybook/recommended',
   ],
   overrides: [
     {
@@ -48,5 +49,6 @@ module.exports = {
     '@typescript-eslint/space-before-function-paren': 'off',
     '@typescript-eslint/indent': 'off',
     '@typescript-eslint/no-confusing-void-expression': 'off',
+    '@typescript-eslint/prefer-includes': 'off',
   },
 };
