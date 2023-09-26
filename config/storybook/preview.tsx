@@ -1,6 +1,6 @@
 import type { Preview } from '@storybook/react';
 import '../../src/app/styles/index.scss';
-import { ThemeEnum } from 'app/providers/ThemeProvider';
+import { ThemeEnum, ThemeProvider } from 'app/providers/ThemeProvider';
 import { BrowserRouter } from 'react-router-dom';
 
 const preview: Preview = {
@@ -15,11 +15,13 @@ const preview: Preview = {
   },
   decorators: [
     (Story) => (
-      <BrowserRouter>
-        <div className={`app ${ThemeEnum.LIGHT} storybook-wrapper`}>
-          <Story />
-        </div>
-      </BrowserRouter>
+      <ThemeProvider>
+        <BrowserRouter>
+          <div className={`app ${ThemeEnum.LIGHT} storybook-wrapper`}>
+            <Story />
+          </div>
+        </BrowserRouter>
+      </ThemeProvider>
     ),
   ],
 };

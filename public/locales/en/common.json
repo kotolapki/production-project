@@ -3,7 +3,8 @@
   "lang": "English",
   "links": {
     "main": "Main",
-    "about": "About"
+    "about": "About",
+    "login": "Login"
   },
   "pageNotFound": "Page not found",
   "appError": "Something went wrong"
