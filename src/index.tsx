@@ -6,6 +6,7 @@ import 'shared/config/i18n/i18n';
 import { ErrorBoundary } from 'app/providers/ErrorBoundary';
 import { AppError } from 'widgets/AppError';
 import 'app/styles/index.scss';
+import { StoreProvider } from 'app/providers/StoreProvider';
 
 const container = document.getElementById('root');
 
@@ -13,12 +14,14 @@ if (container) {
   const root = createRoot(container);
 
   root.render(
-    <BrowserRouter>
-      <ErrorBoundary fallback={<AppError />}>
-        <ThemeProvider>
-          <App />
-        </ThemeProvider>
-      </ErrorBoundary>
-    </BrowserRouter>,
+    <StoreProvider>
+      <BrowserRouter>
+        <ErrorBoundary fallback={<AppError />}>
+          <ThemeProvider>
+            <App />
+          </ThemeProvider>
+        </ErrorBoundary>
+      </BrowserRouter>
+    </StoreProvider>,
   );
 }
