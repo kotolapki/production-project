@@ -28,6 +28,7 @@
     "config",
     "jest.config.ts",
     "jest-setup.ts",
-    "webpack.config.ts"
+    "webpack.config.ts",
+    "json-server"
   ]
 }
