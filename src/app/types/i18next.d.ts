@@ -3,6 +3,7 @@ import common from '../../../public/locales/ru/common.json';
 import main from '../../../public/locales/ru/main.json';
 import about from '../../../public/locales/ru/about.json';
 import counter from '../../../public/locales/ru/counter.json';
+import auth from '../../../public/locales/ru/auth.json';
 
 declare module 'i18next' {
   interface CustomTypeOptions {
@@ -12,6 +13,7 @@ declare module 'i18next' {
       main: typeof main;
       about: typeof about;
       counter: typeof counter;
+      auth: typeof auth;
     };
   }
 }

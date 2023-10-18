@@ -3,8 +3,8 @@ import cls from './Navbar.module.scss';
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { useTranslation } from 'react-i18next';
 import { Button } from 'shared/ui/Button/Button';
-import { Modal } from 'shared/ui/Modal/Modal';
 import { useState } from 'react';
+import { LoginModal } from 'features/AuthByUsername';
 
 interface NavbarProps {
   className?: string;
@@ -32,9 +32,7 @@ export const Navbar = ({ className = '' }: NavbarProps) => {
           {t('links.login')}
         </Button>
       </div>
-      <Modal isOpen={isAuthModalOpen} onClose={onAuthModalClose}>
-        {t('links.login')}
-      </Modal>
+      <LoginModal isOpen={isAuthModalOpen} onClose={onAuthModalClose} />
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import { ReactNode, useEffect } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 import cls from './Modal.module.scss';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Portal } from '../Portal/Portal';
@@ -8,9 +8,17 @@ interface ModalProps {
   children: ReactNode;
   isOpen: boolean;
   onClose: () => void;
+  isLazy?: boolean;
 }
 
-export const Modal = ({ children, isOpen, onClose }: ModalProps) => {
+export const Modal = ({
+  children,
+  isOpen,
+  onClose,
+  isLazy = false,
+}: ModalProps) => {
+  const [isMounted, setIsMounted] = useState(false);
+
   const { theme } = useTheme();
 
   const mods = {
@@ -24,12 +32,20 @@ export const Modal = ({ children, isOpen, onClose }: ModalProps) => {
   };
 
   useEffect(() => {
+    if (isOpen) {
+      setIsMounted(true);
+    }
+
     document.addEventListener('keydown', onKeyDown);
 
     return () => {
       document.removeEventListener('keydown', onKeyDown);
     };
   }, [isOpen]);
+
+  if (isLazy && !isMounted) {
+    return null;
+  }
 
   return (
     <Portal container={document.body}>
