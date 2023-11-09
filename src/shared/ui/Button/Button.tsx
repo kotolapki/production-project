@@ -17,11 +17,19 @@ export const Button = ({
   className = '',
   children,
   theme,
+  disabled,
   ...rest
 }: ButtonProps) => {
+  const mods: Record<string, boolean> = {
+    [cls.disabled]: !!disabled,
+  };
+
   return (
     <button
-      className={classNames(cls.root, {}, [className, theme ? cls[theme] : ''])}
+      className={classNames(cls.root, mods, [
+        className,
+        theme ? cls[theme] : '',
+      ])}
       {...rest}
     >
       {children}

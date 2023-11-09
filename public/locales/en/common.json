@@ -4,7 +4,8 @@
   "links": {
     "main": "Main",
     "about": "About",
-    "login": "Login"
+    "login": "Login",
+    "logout": "Logout"
   },
   "pageNotFound": "Page not found",
   "appError": "Something went wrong"

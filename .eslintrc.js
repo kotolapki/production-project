@@ -50,5 +50,8 @@ module.exports = {
     '@typescript-eslint/indent': 'off',
     '@typescript-eslint/no-confusing-void-expression': 'off',
     '@typescript-eslint/prefer-includes': 'off',
+    '@typescript-eslint/ban-ts-comment': 'off',
+    '@typescript-eslint/prefer-ts-expect-error': 'off',
+    '@typescript-eslint/no-misused-promises': 'off',
   },
 };

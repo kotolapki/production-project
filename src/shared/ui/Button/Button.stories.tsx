@@ -30,3 +30,11 @@ export const Outline: Story = {
     theme: ButtonThemeEnum.OUTLINE,
   },
 };
+
+export const Disabled: Story = {
+  args: {
+    children: 'Button',
+    theme: ButtonThemeEnum.OUTLINE,
+    disabled: true,
+  },
+};
